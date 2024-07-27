@@ -6,18 +6,14 @@ import { HangmanRightArm } from './HangmanRightArm'
 import { HangmanLeftArm } from './HangmanLeftArm'
 import { HangmanRightLeg } from './HangmanRightLeg'
 import { HangmanLeftLeg } from './HangmanLeftLeg'
+import { HangmanBodyParts } from './BodyParts'
 
 const HangmanDrawing: React.FC<HangmanDrawingProps> = ({ numberOfGuesses }: HangmanDrawingProps) => {
     return (
         <div style={{
             position: 'relative'
         }}>
-            <HangmanHead />
-            <HangmanBody />
-            <HangmanRightArm />
-            <HangmanLeftArm />
-            <HangmanRightLeg />
-            <HangmanLeftLeg />
+            {HangmanBodyParts.slice(0, numberOfGuesses)}
             <div style={{
                 height: '50px',
                 width: '10px',
