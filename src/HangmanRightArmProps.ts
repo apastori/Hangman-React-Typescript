@@ -1,1 +1,3 @@
-export interface HangmanRightArmProps {}
+export interface HangmanRightArmProps {
+    key: number
+}

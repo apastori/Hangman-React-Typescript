@@ -1,1 +1,3 @@
-export interface HangmanBodyProps {}
+export interface HangmanBodyProps {
+    key: number
+}

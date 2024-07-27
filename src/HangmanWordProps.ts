@@ -1,4 +1,5 @@
 export interface HangmanWordProps {
     guessedLetters: string[],
-    wordToGuess: string
+    wordToGuess: string,
+    reveal?: boolean
 }

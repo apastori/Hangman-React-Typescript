@@ -1,7 +1,7 @@
 import React from 'react'
 import { HangmanWordProps } from './HangmanWordProps'
 
-const HangmanWord: React.FC<HangmanWordProps> = ({guessedLetters, wordToGuess}: HangmanWordProps) => {
+const HangmanWord: React.FC<HangmanWordProps> = ({guessedLetters, wordToGuess, reveal = false}: HangmanWordProps) => {
     return (
         <div style={{
             display: 'flex',
@@ -20,7 +20,8 @@ const HangmanWord: React.FC<HangmanWordProps> = ({guessedLetters, wordToGuess}: 
                     key={index}
                     >
                         <span style={{
-                            visibility: guessedLetters.includes(letter) ? 'visible' : 'hidden'
+                            visibility: guessedLetters.includes(letter) || reveal ? 'visible' : 'hidden',
+                            color: !guessedLetters.includes(letter) && reveal ? 'red' : 'black'
                         }}>
                         {letter}
                         </span>

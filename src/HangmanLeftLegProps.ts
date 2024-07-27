@@ -1,1 +1,3 @@
-export interface HangmanLeftLegProps {}
+export interface HangmanLeftLegProps {
+    key: number
+}

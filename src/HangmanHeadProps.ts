@@ -1,1 +1,3 @@
-export interface HangmanHeadProps {}
+export interface HangmanHeadProps {
+    key: number
+}
