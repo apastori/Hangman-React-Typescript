@@ -4,7 +4,7 @@ import KeyboardProps from './KeyboardProps'
 import { KeysT } from './KeysType'
 import styles from './keyboard.module.css'
 
-const Keyboard: React.FC<KeyboardProps> = (): React.ReactElement  => {
+const Keyboard: React.FC<KeyboardProps> = ({ activeLetters, disabled = false, inactiveLetters, addGuessedLetter}): React.ReactElement  => {
     return (
         <div style={{
             display: 'grid',
@@ -13,8 +13,22 @@ const Keyboard: React.FC<KeyboardProps> = (): React.ReactElement  => {
         }}>
             {
                 KEYS.map((key): React.ReactElement => {
+                    const isActive: boolean = activeLetters.includes(key)
+                    const isInactive: boolean = inactiveLetters.includes(key)
                     return (
-                        <button className={`${styles.btn}`} key={key}>{key}</button>
+                        <button
+                        onClick={() =>
+                            addGuessedLetter(key)
+                        }
+                        className={`${styles.btn}
+                        ${isActive ? styles.active : ''}
+                        ${isInactive ? styles.inactive : ''}
+                        `}
+                        disabled={
+                            isInactive || isActive || disabled
+                        }
+                        key={key}>{key}
+                        </button>
                     )
                 })
             }

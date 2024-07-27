@@ -15,7 +15,7 @@ const HangmanDrawing: React.FC<HangmanDrawingProps> = ({ numberOfGuesses }: Hang
             position: 'relative'
         }}>
             {HangmanBodyParts.map((HangmanBodyPart: HangmanBodyPartType, index: number) => {
-                if (index <= numberOfGuesses) {
+                if (index < numberOfGuesses) {
                     return <HangmanBodyPart />
                 }
             })}

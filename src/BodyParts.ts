@@ -17,7 +17,14 @@ import { HangmanLeftArmProps } from './HangmanLeftArmProps'
 import { HangmanRightLegProps } from './HangmanRightLegProps'
 import { HangmanLeftLegProps } from './HangmanLeftLegProps'
 
-const HangmanBodyParts = [
+const HangmanBodyParts: [
+    React.FC<HangmanHeadProps>,
+    React.FC<HangmanBodyProps>,
+    React.FC<HangmanRightArmProps>,
+    React.FC<HangmanLeftArmProps>,
+    React.FC<HangmanRightLegProps>,
+    React.FC<HangmanLeftLegProps>
+] = [
     HangmanHead,
     HangmanBody,
     HangmanRightArm,
