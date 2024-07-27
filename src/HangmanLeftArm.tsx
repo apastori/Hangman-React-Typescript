@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 import { HangmanLeftArmProps } from './HangmanLeftArmProps'
 
-const HangmanLeftArm: React.FC<HangmanLeftArmProps> = () => {
+const HangmanLeftArm: React.FC<HangmanLeftArmProps> = (): ReactElement => {
     return (
         <div style={{
             width: '100px',

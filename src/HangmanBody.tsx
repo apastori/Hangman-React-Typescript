@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 import { HangmanBodyProps } from './HangmanBodyProps'
 
-const HangmanBody: React.FC<HangmanBodyProps> = () => {
+const HangmanBody: React.FC<HangmanBodyProps> = (): ReactElement => {
     return (
         <div style={{
             width: '10px',
