@@ -7,13 +7,18 @@ import { HangmanLeftArm } from './HangmanLeftArm'
 import { HangmanRightLeg } from './HangmanRightLeg'
 import { HangmanLeftLeg } from './HangmanLeftLeg'
 import { HangmanBodyParts } from './BodyParts'
+import { HangmanBodyPartType } from './HangmanBodyPartType'
 
 const HangmanDrawing: React.FC<HangmanDrawingProps> = ({ numberOfGuesses }: HangmanDrawingProps) => {
     return (
         <div style={{
             position: 'relative'
         }}>
-            {HangmanBodyParts.slice(0, numberOfGuesses)}
+            {HangmanBodyParts.map((HangmanBodyPart: HangmanBodyPartType, index: number) => {
+                if (index <= numberOfGuesses) {
+                    return <HangmanBodyPart />
+                }
+            })}
             <div style={{
                 height: '50px',
                 width: '10px',
