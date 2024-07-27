@@ -1,9 +1,7 @@
 import React from 'react'
 import { HangmanWordProps } from './HangmanWordProps'
 
-const HangmanWord: React.FC<HangmanWordProps> = () => {
-    const word: string = 'test'
-    const guessedLetter: string[] = ['e', 's']
+const HangmanWord: React.FC<HangmanWordProps> = ({guessedLetters, wordToGuess}: HangmanWordProps) => {
     return (
         <div style={{
             display: 'flex',
@@ -14,7 +12,7 @@ const HangmanWord: React.FC<HangmanWordProps> = () => {
             fontFamily: 'monospace'
         }}>
         {
-            word.split('').map((letter: string, index: number) => {
+            wordToGuess.split('').map((letter: string, index: number) => {
                 return (
                     <span style={{
                         borderBottom: '.1em solid black'
@@ -22,7 +20,7 @@ const HangmanWord: React.FC<HangmanWordProps> = () => {
                     key={index}
                     >
                         <span style={{
-                            visibility: guessedLetter.includes(letter) ? 'visible' : 'hidden'
+                            visibility: guessedLetters.includes(letter) ? 'visible' : 'hidden'
                         }}>
                         {letter}
                         </span>

@@ -9,7 +9,12 @@ function App() {
   const [wordToGuess, setWordToGuess]: [string, React.Dispatch<React.SetStateAction<string>>] = useState<string>(() => {
     return wordList[Math.floor(Math.random() * wordList.length)]
   })
-  const [guessedLetters, setGuessedLetters]: [UpperCaseChar[], React.Dispatch<React.SetStateAction<UpperCaseChar[]>>]  = useState<UpperCaseChar[]>([])
+  const [guessedLetters, setGuessedLetters]: [string[], React.Dispatch<React.SetStateAction<string[]>>]  = useState<string[]>([])
+
+  const incorrectLetters = guessedLetters.filter((letter: string) => {
+    return !wordToGuess.includes(letter)
+  })
+
   return (
     <React.Fragment>
       <div style={{
@@ -26,8 +31,8 @@ function App() {
         }}>
           Lose Win
         </div>
-        <HangmanDrawing />
-        <HangmanWord />
+        <HangmanDrawing numberOfGuesses={incorrectLetters.length} />
+        <HangmanWord guessedLetters={guessedLetters} wordToGuess={wordToGuess} />
         <div style={{
           alignSelf: 'stretch'  
         }}>

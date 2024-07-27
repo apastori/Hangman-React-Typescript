@@ -7,7 +7,7 @@ import { HangmanLeftArm } from './HangmanLeftArm'
 import { HangmanRightLeg } from './HangmanRightLeg'
 import { HangmanLeftLeg } from './HangmanLeftLeg'
 
-const HangmanDrawing: React.FC<HangmanDrawingProps> = () => {
+const HangmanDrawing: React.FC<HangmanDrawingProps> = ({ numberOfGuesses }: HangmanDrawingProps) => {
     return (
         <div style={{
             position: 'relative'

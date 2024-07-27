@@ -14,7 +14,7 @@ const Keyboard: React.FC<KeyboardProps> = (): React.ReactElement  => {
             {
                 KEYS.map((key): React.ReactElement => {
                     return (
-                        <button className={styles.btn} key={key}>{key}</button>
+                        <button className={`${styles.btn}`} key={key}>{key}</button>
                     )
                 })
             }

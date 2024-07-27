@@ -1,1 +1,3 @@
-export interface HangmanDrawingProps {}
+export interface HangmanDrawingProps {
+    numberOfGuesses: number
+}
